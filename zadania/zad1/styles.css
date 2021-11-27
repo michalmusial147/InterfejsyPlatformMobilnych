@@ -19,3 +19,6 @@ input:invalid {
 input:valid {
     border-color: green;
 }
+input:placeholder-shown{
+    border-color: black;
+}
