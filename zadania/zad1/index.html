@@ -23,8 +23,8 @@
                title="Podaj nip w prawidłowym formacie"
                placeholder="000-000-22-22">
 
-        <label for="nr_dowodu">Wprowadź numer dowodu:(brak walidacji)</label>
-        <input required type="text" id="nr_dowodu" name="nr_dowodu" placeholder="AAA-123">
+        <label for="nr_dowodu">Wprowadź numer dowodu</label>
+        <input type="text" id="nr_dowodu" name="nr_dowodu" placeholder="AAA123123" pattern="[a-zA-Z]{3}\d{6}">
         <!--  brak walidacji    -->
 
         <label for="ipv4">Wprowadź adres IPV4:</label>
@@ -54,4 +54,5 @@
     </div>
 </form>
 </body>
+<script type="text/javascript" src="scripts.js"></script>
 </html>
