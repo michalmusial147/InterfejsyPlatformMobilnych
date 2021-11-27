@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<form>
+    <div class="column">
+        <h1>IPM zad1 - Michał Musiał</h1>
+        <label for="email">Wprowadź adres email:</label>
+        <input required type="text" id="email" name="email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" title="Podaj adres email w prawidłowym formacie">
+
+        <label for="post_code">Wprowadź kod pocztowy:</label>
+        <input required type="text" id="post_code" name="post_code" pattern="[0-9]{2}-[0-9]{3}"  title="Podaj kod pocztowy w prawidłowym formacie">
+
+        <label for="nip">Wprowadź nip:</label>
+        <input required type="text" id="nip" name="nip" pattern="^((\d{3}[- ]\d{3}[- ]\d{2}[- ]\d{2})|(\d{3}[- ]\d{2}[- ]\d{2}[- ]\d{3}))$" title="Podaj nip w prawidłowym formacie">
+
+        <label for="nr_dowodu">Wprowadź numer dowodu:</label>
+        <input required type="text" id="nr_dowodu" name="nr_dowodu">
+
+        <label for="ipv4">Wprowadź adres IPV4:</label>
+        <input required type="text" id="ipv4" name="ipv4" pattern="^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)(\.(?!$)|$)){4}$">
+
+        <label for="web_page">Wprowadź adres strony domowej:</label>
+        <input required type="text" id="web_page" name="web_page" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)">
+
+        <label for="disc_path">Wprowadź ścieżkę do dysku</label>
+        <input  requiredtype="text" id="disc_path" name="disc_path">
+
+        <label for="disc_path_extended">Wprowadź ścieżkę do dysku (można duże litery)</label>
+        <input required  type="text" id="disc_path_extended" name="disc_path_extended">
+
+        <label for="etc_path">Wprowadź ścieżkę do katalogu w /etc</label>
+        <input required type="text" id="etc_path" name="etc_path">
+
+        <label for="ipv6">Wprowadź adres ipv6</label>
+        <input required type="text" id="ipv6" name="ipv6">
+
+        <label for="phone">Wprowadź numer telefonu</label>
+        <input required type="text" id="phone" name="phone">
+
+    </div>
+</form>
+</body>
+</html>
