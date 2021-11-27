@@ -22,3 +22,6 @@ input:valid {
 input:placeholder-shown{
     border-color: black;
 }
+.invalid{
+    border-color: red;
+}

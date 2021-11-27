@@ -1,16 +1,22 @@
-const nrDowoduInput = document.getElementById('disc_path');
+const discPath = document.getElementById('disc_path');
 
-nrDowoduInput.addEventListener('change', validate)
+const etPathExtended = document.getElementById('disc_path_extended');
+
+const etcPath = document.getElementById('etc_path');
+
+discPath.addEventListener('change', validate)
+
+etPathExtended.addEventListener('change', validate)
+
+etcPath.addEventListener('change', validate)
 
 function validate(e) {
     e.preventDefault();
    const text = e.target.value;
    let validationResult = false;
-    if (text.length === 9){
-        const first3 = text.substr(0, 3);
-        const from4To9 = text.substr(3, 8);
+    if (text.length !== 0){
+        // todo walidacje
+        validationResult = false;
     }
-    console.log(validationResult);
-    nrDowoduInput.style.cssText+=('input:invalid');
-    // validationResult ? nrDowoduInput.classList.add("input:invalid") : nrDowoduInput.classList.add("input:invalid");
+    validationResult ? e.target.setCustomValidity('') : e.target.setCustomValidity('invalid');
 }
