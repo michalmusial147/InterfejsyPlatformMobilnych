@@ -1,14 +1,6 @@
-const discPath = document.getElementById('disc_path');
-
 const etPathExtended = document.getElementById('disc_path_extended');
 
-const etcPath = document.getElementById('etc_path');
-
-// discPath.addEventListener('change', validate)
-//
 etPathExtended.addEventListener('change', validated_disc_path_extended)
-//
-// etcPath.addEventListener('change', validate)
 
 function validated_disc_path_extended(e) {
     const regex = new RegExp(
