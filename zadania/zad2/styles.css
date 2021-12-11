@@ -22,6 +22,11 @@ input:valid {
 input:placeholder-shown{
     border-color: black;
 }
-.invalid{
-    border-color: red;
+.dateInput
+{
+    border-color: black !important;
+}
+.dateInput:valid
+{
+    border-color: green !important;
 }

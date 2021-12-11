@@ -1,5 +1,4 @@
 const etPathExtended = document.getElementById('disc_path_extended');
-
 etPathExtended.addEventListener('change', validated_disc_path_extended)
 
 function validated_disc_path_extended(e) {
