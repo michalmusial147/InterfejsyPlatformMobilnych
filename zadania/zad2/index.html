@@ -54,6 +54,31 @@
         <label for="date_input">Wprowadź datę:</label>
         <input required class="dateInput"  type="date" id="date_input" name="trip-start">
 
+        <label for="date_input">Wprowadź datę ( dzień roboczy z tego tygodnia ) :</label>
+        <input   class="dateWorkingInput"  type="date" id="date_input_working_day" name="trip-start">
+
+        <label for="time12">Wprowadź godzinę w formacie 12 godzinnym:</label>
+        <div class="rowtime">
+            <input style="display: flex" type="time" id="time12" name="appt" min="00:00" max="12:00" required placeholder="00:00">
+            <select style="display: flex" name="pets" id="12-select">
+                <option value="">AM</option>
+                <option value="dog">PM</option>
+            </select>
+        </div>
+
+        <label for="time24">Wprowadź godzinę w formacie 24 godzinnym:</label>
+        <div class="rowtime">
+            <input  style="display: flex" type="time" id="time24" name="appt" min="00:00" max="12:00" required placeholder="00:00">
+            <select style="display: flex" name="pets" id="24-select">
+                <option value="">AM</option>
+                <option value="dog">PM</option>
+            </select>
+        </div>
+
+        <label for="head">Wybierz kolor</label>
+        <input type="color" id="head" name="head"
+               value="#ff6433">
+
 
     </div>
 </form>
