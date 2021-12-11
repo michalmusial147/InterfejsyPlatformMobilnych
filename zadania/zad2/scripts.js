@@ -31,7 +31,7 @@ function isDateInThisWeek(date) {
     const todayDay = today.getDay();
     const firstDayOfWeek = new Date(today.setDate(todayDate - todayDay));
     const lastDayOfWeek = new Date(firstDayOfWeek);
-    lastDayOfWeek.setDate(lastDayOfWeek.getDate() + 4);
+    lastDayOfWeek.setDate(lastDayOfWeek.getDate() + 5);
     return date >= firstDayOfWeek && date <= lastDayOfWeek;
 }
 
