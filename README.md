@@ -1,4 +1,8 @@
 # InterfejsyPlatformMobilnych
+Rozwiązania zadań  z przedmiotu Interfejsy Platform Mobilnych
+Spis zadań:
+https://michalmusial147.github.io/InterfejsyPlatformMobilnych/zadania/
+
 
 Proszę przygotować stronę internetową na której znajdować się będą polatekstowe (każde w oddzielnej linii) sprawdzające poprawność wpisania danych wymienionych poniżej. Do każdego pola ma być dodany placeholder z przykładowymi poprawnymi danymi. Uwaga w celu zapewnienie maksymalnej kompatybilności pomiędzy przeglądarkami proszę wykorzystać CSS do ustawienia zielonego koloru obramówki pól wypełnionych poprawnie i czerwonego dla wypełnionych niepoprawnie. Wszystkie podpunkty mają być zrealizowanie przy wykorzystaniu standardowych opcji HTML5, CSS 3 i JavaScript.
 Zad1
