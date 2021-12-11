@@ -8,7 +8,7 @@
 <body>
 <form>
     <div class="column">
-        <h1>IPM zad1 - Michał Musiał</h1>
+        <h1>IPM zad2 - Michał Musiał</h1>
         <label for="email">Wprowadź adres email:</label>
         <input required type="email" id="email" name="email" title="Podaj adres email w prawidłowym formacie" placeholder="email@test.com">
 
@@ -31,7 +31,7 @@
         <input required type="text" id="ipv4" name="ipv4" pattern="^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)(\.(?!$)|$)){4}$" placeholder="000.00.0.0">
 
         <label for="web_page">Wprowadź adres strony domowej:</label>
-        <input required type="url" id="web_page" name="web_page" placeholder="www.twojastrona.com">
+        <input required type="text" id="web_page" name="web_page" placeholder="www.twojastrona.com" pattern="[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)">
 
         <label for="disc_path">Wprowadź ścieżkę do dysku (brak walidacji) </label>
         <input type="text" id="disc_path" name="disc_path" placeholder="~/michal/workspace" >
