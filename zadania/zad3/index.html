@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,18 +9,35 @@
 </head>
 <body>
 <h1>IPM zad3 - Michał Musiał</h1>
-<h2>IPM pkt 1</h2>
-<div id="generated-element" ></div>
-
-<ul class="draggable-list" id="draggable-list"></ul>
-
-<button class="check-btn" id="add_element">
-    Dodaj
-    <i class="fas fa-plus"></i>
-</button>
-
-</br>
-
+<h2>(1)</h2>
+<div class="section-1">
+    <div id="generated-element"></div>
+    <ul class="draggable-list" id="draggable-list"></ul>
+    <button class="check-btn" id="add_element">
+        Dodaj
+        <i class="fas fa-plus"></i>
+    </button>
+    </br>
+</div>
+<div class="section-2">
+    <h2>(2)</h2>
+    <div class="platform">
+        <ul class="draggable-list2" id="draggable-list2" ondragover="allowDrop(event)" ondrop="drop(event)">
+            <li style="background: black; height: 30px"></li>
+        </ul>
+    </div>
+    <div class="generator">
+        <div class="col">
+            <div id="generated-box">
+            </div>
+            </br>
+            <button class="gen-btn" id="generate">
+                Generuj
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    </div>
+</div>
 <script src="scripts.js"></script>
 </body>
 </html>
