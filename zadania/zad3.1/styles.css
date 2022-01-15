@@ -1,0 +1,114 @@
+.section-1 {
+    --background-color: #C42847;
+    --text-color: white;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+.draggable-list {
+    color: var(--text-color);
+    padding: 0;
+    list-style-type: none;
+}
+.draggable-list2 {
+
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100px;
+    height: 100px;
+    color:black;
+    padding: 0;
+    list-style-type: none;
+}
+
+.draggable-list .number {
+    border-radius: 40px;
+    box-shadow: 3px 3px #888888;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    height: 60px;
+    width: 60px;
+}
+
+.draggable-list li.over .draggable {
+    background-color: #eaeaea;
+}
+
+.draggable {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    flex: 1;
+}
+.section-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 100px;
+    height: 100vh;
+    --text-color: white;
+    background-color: #F7F5FB;
+ }
+.platform {
+    height: 80%;
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+.generator {
+    height: 20%;
+    width: 100%;
+    background-color:  white;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.check-btn {
+    background-color: var(--background-color);
+    border: none;
+    color: var(--text-color);
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.col-plat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.gen-btn {
+    background-color: #DE3C4B;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.list2-el {
+    margin: 10px;
+}
