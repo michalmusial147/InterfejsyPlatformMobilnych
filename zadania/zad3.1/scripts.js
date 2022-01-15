@@ -1,117 +1,63 @@
-const draggable_list = document.getElementById('draggable-list');
-const addElement = document.getElementById('add_element');
-const listElements = [1, 2, 3];
-const listItems = [];
-let dragStartIndex;
-createList();
+function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+        // if present, the header is where you move the DIV from:
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    } else {
+        // otherwise, move the DIV from anywhere inside the DIV:
+        elmnt.onmousedown = dragMouseDown;
+    }
 
-function createList() {
-    [...listElements]
-        .forEach((x, index) => {
-            addElementToList(index)
-        });
-    addEventListeners();
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+        // stop moving when mouse button is released:
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
 }
 
-function dragStart() {
-    dragStartIndex = +this.closest('li').getAttribute('data-index');
-}
-
-function dragEnter() {
-    this.classList.add('over');
-}
-
-function dragLeave() {
-    this.classList.remove('over');
-}
-
-function dragOver(e) {
-    console.log('over');
-    e.preventDefault();
-}
-
-function dragDrop() {
-    const dragEndIndex = +this.getAttribute('data-index');
-    swapItems(dragStartIndex, dragEndIndex);
-    this.classList.remove('over');
-}
-
-function swapItems(fromIndex, toIndex) {
-    const itemOne = listItems[fromIndex].querySelector('.draggable');
-    const itemTwo = listItems[toIndex].querySelector('.draggable');
-    listItems[fromIndex].appendChild(itemTwo);
-    listItems[toIndex].appendChild(itemOne);
-}
-
-function addEventListeners() {
-    const draggables = document.querySelectorAll('.draggable');
-    const dragListItems = document.querySelectorAll('.draggable-list li');
-    draggables.forEach(draggable => {
-        draggable.addEventListener('dragstart', dragStart);
-    });
-    dragListItems.forEach(item => {
-        item.addEventListener('dragover', dragOver);
-        item.addEventListener('drop', dragDrop);
-        item.addEventListener('dragenter', dragEnter);
-        item.addEventListener('dragleave', dragLeave);
-    });
-}
-
-function addElementToList(index) {
-    const listItem = document.createElement('li');
-    listItem.setAttribute('data-index', index);
-    listItem.innerHTML = `
-        <div class="draggable" draggable="true">
-          <span class="number">${index + 1}</span>
-        </div>
-      `;
-    listItems.push(listItem);
-    draggable_list.appendChild(listItem);
-    addEventListeners()
-}
-
-addElement.addEventListener('click', addElementF);
-
-function addElementF() {
-    addElementToList(listItems.length)
-}
+elements = [];
 
 const generate = document.getElementById('generate');
 const generatedBox = document.getElementById('generated-box');
 let currentColor;
 
 function generateBox() {
+    const para = document.createElement("div");
     var randomColor = Math.floor(Math.random() * 16777215).toString(16);
     currentColor = randomColor;
     console.log(randomColor);
-    generatedBox.addEventListener('drop', dragLeave2);
-    generatedBox.innerHTML = `
-    <div draggable="true" style="height: 100px; width: 100px; background: #${randomColor}">
+    para.innerHTML = `
+    <div id="mydiv${elements.length}" draggable="true" style="height: 100px; width: 100px; background: #${randomColor}; position:absolute;">
+     <div id="mydivheader">Click here to move</div>
     </div>
     `;
-}
-
-generate.addEventListener('click', generateBox);
-const draggable_list2 = document.getElementById('draggable-list2');
-
-function addElementToList2() {
-    const listItem = document.createElement('li');
-    listItem.innerHTML = ` <div class="list2-el" draggable="true" style="pointer-events: none;height: 100px; width: 100px; background: #${currentColor}">
-    </div>
-      `;
-    draggable_list2.appendChild(listItem);
-}
-
-function dragLeave2(ev) {
-    ev.preventDefault();
-    console.log('drop')
+    generatedBox.appendChild(para);
+    dragElement(document.getElementById(`mydiv${elements.length}`));
+    elements.push(elements.length);
 
 }
-
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
-function drop(ev) {
-    addElementToList2();
-}
+generate.addEventListener('click', generateBox)
