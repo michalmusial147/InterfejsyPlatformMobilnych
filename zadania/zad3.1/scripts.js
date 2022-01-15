@@ -4,7 +4,6 @@ const centerRectWidth = 50;
 const centerRectHeight = 50;
 
 
-
 function intersectRect(r1, r2) {
     return !(r2.left > r1.right ||
         r2.right < r1.left ||
@@ -47,7 +46,6 @@ function dragElement(elmnt) {
         // console.log(yHist);
         const object = elements.find(el => el.id === e.target.id)
         console.log(object);
-        const doOverlap = false;
 
         if(elmnt.offsetTop - pos2 > 270) {
             elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
