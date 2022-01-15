@@ -1,3 +1,6 @@
+let xHist = 0;
+let yHist = 0;
+
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     if (document.getElementById(elmnt.id + "header")) {
@@ -7,8 +10,9 @@ function dragElement(elmnt) {
         // otherwise, move the DIV from anywhere inside the DIV:
         elmnt.onmousedown = dragMouseDown;
     }
-
     function dragMouseDown(e) {
+        xHist = e.clientX;
+        yHist = e.clientY;
         e = e || window.event;
         e.preventDefault();
         // get the mouse cursor position at startup:
@@ -28,7 +32,11 @@ function dragElement(elmnt) {
         pos3 = e.clientX;
         pos4 = e.clientY;
         // set the element's new position:
-        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        console.log(xHist);
+        console.log(yHist);
+        if(elmnt.offsetTop - pos2 > 270) {
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        }
         elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
     }
 
@@ -51,8 +59,8 @@ function generateBox() {
     currentColor = randomColor;
     console.log(randomColor);
     para.innerHTML = `
-    <div id="mydiv${elements.length}" draggable="true" style="height: 100px; width: 100px; background: #${randomColor}; position:absolute;">
-     <div id="mydivheader">Click here to move</div>
+    <div id="mydiv${elements.length}" draggable="true" style="top:270px; height: 100px; width: 100px; background: #${randomColor}; position:absolute;">
+     <div id="mydivheader"></div>
     </div>
     `;
     generatedBox.appendChild(para);
